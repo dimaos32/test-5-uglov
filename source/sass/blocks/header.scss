@@ -1,13 +1,247 @@
 .header {
-  padding: 28px 0;
+  position: relative;
 
-  background-color: $color-neon-blue;
+  padding: 30px 0;
 
-  .container {
-    display: flex;
+  @include vp-1023 {
+    padding: 20px 0;
+  }
+}
+
+.header__top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+
+  margin-bottom: 70px;
+
+  @include vp-1023 {
+    margin-bottom: 0;
+  }
+}
+
+.header__menu-toggle {
+  display: none;
+
+  cursor: pointer;
+
+  @include vp-1023 {
+    position: relative;
+    display: block;
+
+    width: 40px;
+    height: 36px;
+    margin: -5px;
+    margin-right: 15px;
+    padding: 0;
+
+    background-color: $color-transparent;
+    border: none;
+
+    transition: color $trans-default;
   }
 
-  &__logo {
-    color: $color-default-white;
+  @include vp-599 {
+    width: 38px;
+    height: 34px;
+    margin-right: 11px;
+  }
+}
+
+.header__burger-line {
+  display: block;
+  position: absolute;
+  top: 50%;
+  right: 5px;
+
+  width: 30px;
+  height: 2px;
+
+  background-color: $color-default-black;
+
+  transition:
+    right $trans-default,
+    width $trans-default,
+    transform $trans-default;
+
+  &--top {
+    transform: translateY(calc(-50% - 11px));
+  }
+
+  &--middle {
+    transform: translateY(-50%);
+  }
+
+  &--bottom {
+    transform: translateY(calc(-50% + 11px));
+  }
+
+  .is-open & {
+    &--top {
+      transform: translateY(-50%) rotate(-45deg);
+    }
+
+    &--middle {
+      width: 0;
+      right: 10px;
+    }
+
+    &--bottom {
+      bottom: 5px;
+      transform: translateY(-50%) rotate(45deg);
+    }
+  }
+
+  @include vp-599 {
+    width: 28px;
+
+    &--top {
+      transform: translateY(calc(-50% - 10px));
+    }
+
+    &--bottom {
+      transform: translateY(calc(-50% + 10px));
+    }
+
+    .is-open & {
+      &--middle {
+        right: 8px;
+      }    }
+  }
+}
+
+.header__search-form {
+  margin-right: 20px;
+
+  @include vp-1023 {
+    margin-right: 71px;
+  }
+
+  @include vp-599 {
+    margin-right: 17px;
+  }
+}
+
+.header__logo {
+  position: absolute;
+  left: 50%;
+  bottom: 30px;
+  transform: translateX(-50%);
+
+  @include vp-1023 {
+    position: static;
+    transform: none;
+
+    margin: 0 auto;
+  }
+}
+
+.header__logo-img {
+  display: block;
+  width: 160px;
+  height: 50px;
+
+  @include vp-1023 {
+    width: 96px;
+    height: 30px;
+  }
+
+  @include vp-599 {
+    width: 77px;
+    height: 24px;
+  }
+}
+
+.header__account-wrapper {
+  margin-left: 20px;
+}
+
+.header__account-menu {
+  @include reset-list;
+
+  display: flex;
+
+  margin: -5px -10px;
+}
+
+.header__account-menu-item {
+  &:not(:last-child) {
+    margin-right: 2px;
+  }
+
+  @include vp-599 {
+    &--profile {
+      display: none;
+    }
+  }
+}
+
+.header__account-link {
+  display: flex;
+  align-items: center;
+
+  padding: 8px 10px 5px;
+
+  color: $color-default-black;
+
+  &--counter {
+    position: relative;
+
+    padding-right: 15px;
+  }
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &[href]:hover,
+    &:focus {
+      color: $color-nobel;
+    }
+  }
+
+  @include vp-599 {
+    padding: 5px 7px;
+
+    &--counter {
+      padding-right: 17px;
+    }
+  }
+}
+
+.header__account-icon {
+  width: auto;
+  height: 27px;
+
+  @include vp-599 {
+    height: 24px;
+  }
+}
+
+.header__account-counter {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 5px;
+  right: 10px;
+
+  width: 16px;
+  height: 16px;
+  padding-top: 1px;
+
+  color: $color-default-white;
+  background-color: $color-default-black;
+  border-radius: 50px;
+
+  transition: background-color $trans-default;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    .header__account-link:hover &,
+    .header__account-link:focus & {
+      background-color: $color-nobel;
+    }
+  }
+
+  @include vp-599 {
+    top: 2px;
+    right: 7px;
   }
 }

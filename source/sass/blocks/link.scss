@@ -1,0 +1,17 @@
+.link {
+  display: inline-flex;
+  align-items: center;
+
+  color: $color-nobel;
+
+  outline: none;
+
+  transition: color $trans-default;
+
+  @media (hover: hover), screen and (min-width: 0\0) {
+    &[href]:hover,
+    &:focus {
+      color: $color-default-black;
+    }
+  }
+}

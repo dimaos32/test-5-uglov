@@ -1,23 +1,102 @@
 .main-nav {
-  &__list {
-    display: flex;
-    margin: 0;
-    margin-right: 20px;
-    margin-left: 60px;
-    padding: 0;
+  @include vp-1023 {
+    overflow: hidden;
+    visibility: hidden;
+    opacity: 0;
 
-    list-style: none;
+    position: fixed;
+
+    top:68px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+
+    transition:
+      overflow $trans-default,
+      visibility $trans-default,
+      opacity $trans-default;
+
+    &.is-open {
+      overflow: visible;
+      visibility: visible;
+      opacity: 1;
+    }
   }
 
-  &__item {
-    margin-right: 20px;
+  @include vp-599 {
+    top: 62px;
+  }
+}
+
+.main-nav__overlay {
+  @include vp-1023 {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+
+    background-color: rgba($color-default-black, 0.8);
+  }
+}
+
+.main-nav__list {
+  @include reset-list;
+
+  display: flex;
+
+  @include vp-1023 {
+    position: relative;
+    z-index: 2;
+
+    display: block;
+
+    width: 250px;
+    height: calc(100vh - 68px);
+    /* stylelint-disable-next-line */
+    height: calc((100 * var(--vh, 1vh)) - 68px);
+    padding: 20px 16px 20px;
+
+    background-color: $color-default-white;
+  }
+  display: flex;
+
+  @include vp-599 {
+    height: calc(100vh -62px);
+    /* stylelint-disable-next-line */
+    height: calc((100 * var(--vh, 1vh)) - 62px);
+  }
+}
+
+.main-nav__item {
+  &:nth-child(4) {
+    margin-left: auto;
   }
 
-  &__link {
-    color: $color-default-white;
+  &:not(:last-child) {
+    margin-right: 30px;
   }
 
-  &__toggle {
-    display: none;
+  @include vp-1159 {
+    &:not(:last-child) {
+      margin-right: 20px;
+    }
+  }
+
+  @include vp-1023 {
+    &:not(:last-child) {
+      margin-right: 0;
+      margin-bottom: 10px;
+    }
+  }
+}
+
+.main-nav__link {
+  font-weight: 700;
+  text-transform: uppercase;
+
+  @include vp-1023 {
+    padding: 10px 0;
   }
 }

@@ -1,0 +1,13 @@
+mixin search-form()
+  .search-form&attributes(attributes)
+    button.search-form__btn(type="submit" aria-label="Поиск")
+      +icon("icon-search", 27, 27).search-form__icon
+    .search-form__input__wrapper
+      +custom-input({
+        inputType: "search",
+        inputLabel: "Поиск",
+        inputPlaceholder: "Поиск",
+        inputName: "search-form",
+        inputId: "id-search-form",
+      }).custom-input--search-form.search-form__input
+      button.visually-hidden(type="submit", aria-label="Найти")

@@ -3,8 +3,7 @@
   position: relative;
 
   display: flex;
-  width: 500px;
-  padding: 20px 0;
+  width: 100%;
 
   label {
     display: flex;
@@ -14,45 +13,49 @@
     input,
     textarea {
       flex-grow: 1;
-      min-height: 40px;
-      margin-left: 30px;
-      padding: 10px;
 
-      border: 2px solid rgba($color-default-black, 0.2);
-      border-radius: 5px;
+      padding: 18px 0 9px;
+
+      font-size: 16px;
+      line-height: 1.2;
+
+      border: none;
+      border-bottom: 1px solid $color-nobel;
       outline: none;
 
-      transition: border $trans-default;
+      transition: border-color $trans-default;
+    }
+  }
 
-      &:hover {
-        border: 2px solid rgba($color-default-black, 0.5);
+  &--search-form {
+    label {
+      width: 250px;
+
+      input {
+        padding: 0;
+        padding-bottom: 5px;
+
+        font-size: 18px;
+        line-height: percentage (21 / 18);
+
+        &::placeholder {
+          color: $color-nobel;
+        }
       }
 
-      &:focus {
-        border: 2px solid rgba($color-default-black, 0.8);
+      @include vp-1023 {
+        width: 100%;
       }
     }
   }
 
-  &__error {
-    position: absolute;
-    right: 0;
-    bottom: -5px;
-
-    color: $color-torch-red;
-
-    opacity: 0;
-
-    transition: opacity $trans-default;
-  }
-
   &.is-invalid {
     input {
-      border: 2px solid $color-torch-red;
+      border: 2px solid $color-free-speech-red;
 
       &:focus,
       &:hover {
-        border: 2px solid rgba($color-torch-red, 0.5);
+        border: 2px solid rgba($color-free-speech-red, 0.5);
       }
     }
 
@@ -71,4 +74,42 @@
       }
     }
   }*/
+}
+
+.custom-input__label {
+  position: absolute;
+  top: 18px;
+  left: 0;
+
+  Color: $color-nobel;
+
+  transform-origin: left top,;
+
+  transition:
+    top $trans-default,
+    transform $trans-default;
+
+  input:focus + &,
+  textarea:focus + & {
+    top: 0;
+    transform: scale(0.75);
+  }
+
+  .custom-input--search-form & {
+    @extend .visually-hidden;
+
+    position: static;
+  }
+}
+
+custom-input__error {
+  position: absolute;
+  right: 0;
+  bottom: -5px;
+
+  color: $color-free-speech-red;
+
+  opacity: 0;
+
+  transition: opacity $trans-default;
 }
