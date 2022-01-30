@@ -1,0 +1,23 @@
+.bread-crumbs {
+  padding: 10px 0;
+
+  @include vp-1023 {
+    padding-bottom: 20px;
+  }
+}
+
+.bread-crumbs__list {
+  @include reset-list;
+}
+
+.bread-crumbs__item {
+  display: inline-block;
+
+  span {
+    color: $color-nobel;
+  }
+}
+
+.bread-crumbs__link {
+  padding: 10px 0;
+}
