@@ -13,6 +13,6 @@ mixin custom-input(options = {})
     label
       input(type=inputType, id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder)
       if inputLabel
-        span.custom-input__label!=inputLabel
+        span.custom-input__label.no-transition!=inputLabel
     if inputError
-      .custom-input__error!=inputError
+      .txt-xs.custom-input__error!=inputError

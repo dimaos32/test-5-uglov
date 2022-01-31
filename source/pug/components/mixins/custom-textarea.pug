@@ -5,13 +5,14 @@ mixin custom-textarea(options = {})
   - const inputId = options.inputId ? options.inputId : false
   - const inputName = options.inputName ? options.inputName : false
   - const inputValue = options.inputValue ? options.inputValue : false
+  - const inputRows = options.inputRows ? options.inputRows : false
   - const inputMinLength = options.inputMinLength ? options.inputMinLength : false
   - const inputMaxLength = options.inputMaxLength ? options.inputMaxLength : false
 
   .custom-textarea&attributes(attributes)
     label
+      textarea(id=inputId, name=inputName, value=inputValue, rows=inputRows minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder)
       if inputLabel
         span.custom-textarea__label!=inputLabel
-      textarea(id=inputId, name=inputName, value=inputValue, minlength=inputMinLength, maxlength=inputMaxLength, placeholder=inputPlaceholder)
     if inputError
       .custom-textarea__error!=inputError

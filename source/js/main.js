@@ -2,10 +2,14 @@ import {iosVhFix} from './utils/ios-vh-fix';
 
 import {initMobileMenu} from './modules/init-mobile-menu';
 import {initSearchForm} from './modules/init-search-form';
+import {initLabelMoving} from './modules/form/init-label-moving';
 
 import {initModals} from './modules/modals/init-modals';
 import {initCustomSelect} from './modules/form/init-custom-select';
 import {initFormValidate} from './modules/form/init-form-validate';
+import {initAutoResizeTextarea} from './modules/form/auto-resize-textarea';
+import {removeNoTransition} from './modules/remove-no-transition';
+import {initCartProductCounter} from './modules/init-cart-product-counter';
 
 // ---------------------------------
 
@@ -17,6 +21,7 @@ window.addEventListener('DOMContentLoaded', () => {
   iosVhFix();
   initMobileMenu();
   initSearchForm();
+  initLabelMoving();
 
   // Modules
   // ---------------------------------
@@ -27,6 +32,9 @@ window.addEventListener('DOMContentLoaded', () => {
     initModals();
     initCustomSelect();
     initFormValidate();
+    initAutoResizeTextarea();
+    removeNoTransition();
+    initCartProductCounter();
   });
 });
 

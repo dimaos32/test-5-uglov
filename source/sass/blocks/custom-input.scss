@@ -50,13 +50,9 @@
   }
 
   &.is-invalid {
-    input {
-      border: 2px solid $color-free-speech-red;
-
-      &:focus,
-      &:hover {
-        border: 2px solid rgba($color-free-speech-red, 0.5);
-      }
+    input,
+    textarea {
+      border-color: $color-free-speech-red;
     }
 
     .custom-input__error {
@@ -76,19 +72,21 @@
   }*/
 }
 
-.custom-input__label {
+.custom-input__label,
+.custom-textarea__label {
   position: absolute;
   top: 18px;
   left: 0;
 
   Color: $color-nobel;
 
-  transform-origin: left top,;
+  transform-origin: left top;
 
   transition:
     top $trans-default,
     transform $trans-default;
 
+  &.is-moved,
   input:focus + &,
   textarea:focus + & {
     top: 0;
@@ -102,12 +100,14 @@
   }
 }
 
-custom-input__error {
+.custom-input__error,
+.custom-textarea__error {
   position: absolute;
-  right: 0;
-  bottom: -5px;
+  top: 0;
+  left: 0;
 
   color: $color-free-speech-red;
+  background-color: $color-default-white;
 
   opacity: 0;
 

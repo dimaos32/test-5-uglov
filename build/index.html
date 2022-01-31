@@ -42,7 +42,7 @@
               <div class="search-form__input__wrapper">
                 <div class="custom-input custom-input--search-form search-form__input">
                   <label>
-                    <input type="search" id="id-search-form" name="search-form" placeholder="Поиск"><span class="custom-input__label">Поиск</span>
+                    <input type="search" id="id-search-form" name="search-form" placeholder="Поиск"><span class="custom-input__label no-transition">Поиск</span>
                   </label>
                 </div>
                 <button class="visually-hidden" type="submit" aria-label="Найти"></button>
@@ -99,6 +99,129 @@
               </li>
               <li class="bread-crumbs__item">Корзина</li>
             </ul>
+          </div>
+        </section>
+        <section class="cart">
+          <div class="container">
+            <div class="cart__wrapper">
+              <div class="cart__content">
+                <h1 class="cart__title">Корзина</h1>
+                <p class="txt cart__login">
+                  Есть аккаунт?
+                  <a class="link cart__login-link" href="#">Войти</a>
+                </p>
+                <div class="cart__form" data-validate data-callback="order">
+                  <form>
+                    <div class="cart__form-wrapper">
+                      <div class="custom-input cart__form-input" data-validate-type="text">
+                        <label>
+                          <input type="text" id="id-cart-address" name="cart-address" value="г. Санкт-Петербург, пр. Просвещения, д. 99, кв. 152"><span class="custom-input__label no-transition">Адрес</span>
+                        </label>
+                        <div class="txt-xs custom-input__error">Необходимо указать Ваш Адрес</div>
+                      </div>
+                      <div class="cart__map">
+                        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1185.046860826007!2d30.429674482558163!3d60.03159784991486!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46963339410d08ff%3A0xf62f8096bec3608a!2z0L_RgC4g0J_RgNC-0YHQstC10YnQtdC90LjRjywgOTksIDE1Miwg0KHQsNC90LrRgi3Qn9C10YLQtdGA0LHRg9GA0LMsIDE5NTI5OQ!5e0!3m2!1sru!2sru!4v1643563148479!5m2!1sru!2sru" allowfullscreen="" loading="lazy"></iframe>
+                      </div>
+                      <div class="cart__form-inputs">
+                        <div class="custom-input cart__form-input" data-validate-type="text" data-limitations="letters-and-digit">
+                          <label>
+                            <input type="text" id="id-cart-name" name="cart-name"><span class="custom-input__label no-transition">Ваше Имя</span>
+                          </label>
+                          <div class="txt-xs custom-input__error">Необходимо указать Ваше Имя</div>
+                        </div>
+                        <div class="custom-input cart__form-input" data-validate-type="phone">
+                          <label>
+                            <input type="phone" id="id-cart-phone" name="cart-phone"><span class="custom-input__label no-transition">Ваш Телефон</span>
+                          </label>
+                          <div class="txt-xs custom-input__error">Необходимо указать Ваш Телефон</div>
+                        </div>
+                      </div>
+                      <div class="custom-input cart__form-input" data-validate-type="email">
+                        <label>
+                          <input type="email" id="id-cart-email" name="cart-email"><span class="custom-input__label no-transition">Ваш Email</span>
+                        </label>
+                        <div class="txt-xs custom-input__error">Необходимо указать Ваш Email</div>
+                      </div>
+                      <div class="custom-select cart__form-input" data-select data-validate-type="select" data-name="cart-packaging" data-id="id-cart-packaging"><span class="custom-select__label no-transition">Тип упаковки</span><span class="txt-xs custom-select__error">Необходимо выбрать Тип упаковки</span>
+                        <button class="custom-select__button" type="button" aria-label="Выберите одну из опций"><span class="custom-select__text"></span><span class="custom-select__icon"></span></button>
+                        <ul class="custom-select__list" role="listbox">
+                          <li class="custom-select__item" tabindex="0" data-select-value="none" aria-selected="false" role="option">Без упаковки</li>
+                          <li class="custom-select__item" tabindex="0" data-select-value="standart" aria-selected="false" role="option">Стандартная</li>
+                          <li class="custom-select__item" tabindex="0" data-select-value="gift" aria-selected="false" role="option">Подарочная</li>
+                        </ul>
+                      </div>
+                      <div class="custom-textarea autoresize-textarea cart__form-input" rows="1">
+                        <label>
+                          <textarea id="id-cart-packaging" name="cart-packaging" rows="1"></textarea><span class="custom-textarea__label">Введите комментарий</span>
+                        </label>
+                      </div>
+                    </div>
+                    <div class="cart__products">
+                      <h2 class="cart__products-title">Выбранные товары:</h2>
+                      <ul class="cart__products-list">
+                        <li class="cart__products-item">
+                          <article class="produtct-card"><a class="produtct-card__link" href="#"></a>
+                            <div class="produtct-card__cover"><img src="img/content/product-01.jpg" srcset="img/content/product-01@2x.jpg 2x" width="150" height="150" alt="">
+                            </div>
+                            <div class="produtct-card__col produtct-card__col--center">
+                              <h3 class="produtct-card__title">Товар 1</h3>
+                              <p class="produtct-card__desc">Описание товара, которое может быть длинным</p>
+                              <div class="cart-product-counter produtct-card__counter">
+                                <input type="number" min="0" max="99" step="1" value="1" name="product-01">
+                                <button class="cart-product-counter__quantity-btn cart-product-counter__quantity-btn--decrement" type="button" aria-label="Уменьшить" tabindex="-1"></button>
+                                <button class="cart-product-counter__quantity-btn cart-product-counter__quantity-btn--increment" type="button" aria-label="Увеличить" tabindex="-1"></button>
+                              </div>
+                            </div>
+                            <div class="produtct-card__col produtct-card__col--right">
+                              <p class="h3 produtct-card__price"><output>109</output>0 руб.</p><a class="txt-sm link produtct-card__del-link" href="#">Удалить</a>
+                            </div>
+                          </article>
+                        </li>
+                        <li class="cart__products-item">
+                          <article class="produtct-card"><a class="produtct-card__link" href="#"></a>
+                            <div class="produtct-card__cover"><img src="img/content/product-01.jpg" srcset="img/content/product-01@2x.jpg 2x" width="150" height="150" alt="">
+                            </div>
+                            <div class="produtct-card__col produtct-card__col--center">
+                              <h3 class="produtct-card__title">Товар 2</h3>
+                              <p class="produtct-card__desc">Описание товара, которое может быть очень-очень длинным. Поэтому ограничение максимум 5 строк будет весьма уместным.</p>
+                              <div class="cart-product-counter produtct-card__counter">
+                                <input type="number" min="0" max="99" step="1" value="1" name="product-02">
+                                <button class="cart-product-counter__quantity-btn cart-product-counter__quantity-btn--decrement" type="button" aria-label="Уменьшить" tabindex="-1"></button>
+                                <button class="cart-product-counter__quantity-btn cart-product-counter__quantity-btn--increment" type="button" aria-label="Увеличить" tabindex="-1"></button>
+                              </div>
+                            </div>
+                            <div class="produtct-card__col produtct-card__col--right">
+                              <p class="h3 produtct-card__price"><output>700</output> руб.</p><a class="txt-sm link produtct-card__del-link" href="#">Удалить</a>
+                            </div>
+                          </article>
+                        </li>
+                        <li class="cart__products-item">
+                          <article class="produtct-card"><a class="produtct-card__link" href="#"></a>
+                            <div class="produtct-card__cover"><img src="img/content/product-01.jpg" srcset="img/content/product-01@2x.jpg 2x" width="150" height="150" alt="">
+                            </div>
+                            <div class="produtct-card__col produtct-card__col--center">
+                              <h3 class="produtct-card__title">Товар 3</h3>
+                              <p class="produtct-card__desc">Короткое описание товара</p>
+                              <div class="cart-product-counter produtct-card__counter">
+                                <input type="number" min="0" max="99" step="1" value="2" name="product-03">
+                                <button class="cart-product-counter__quantity-btn cart-product-counter__quantity-btn--decrement" type="button" aria-label="Уменьшить" tabindex="-1"></button>
+                                <button class="cart-product-counter__quantity-btn cart-product-counter__quantity-btn--increment" type="button" aria-label="Увеличить" tabindex="-1"></button>
+                              </div>
+                            </div>
+                            <div class="produtct-card__col produtct-card__col--right">
+                              <p class="h3 produtct-card__price"><output>200</output>0 руб.</p><a class="txt-sm link produtct-card__del-link" href="#">Удалить</a>
+                            </div>
+                          </article>
+                        </li>
+                      </ul>
+                    </div>
+                    <div class="h1 cart__total-price"><span>Итог:</span><span>
+                        <output>3790</output> руб.</span></div>
+                    <button class="btn" type="submit">Купить</button>
+                  </form>
+                </div>
+              </div>
+            </div>
           </div>
         </section>
       </main>

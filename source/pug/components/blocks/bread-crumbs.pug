@@ -4,8 +4,8 @@ mixin bread-crumbs(pages)
       ul.txt-lg.bread-crumbs__list
         each parent in pages.parents
           li.bread-crumbs__item
-            a.link.bread-crumbs__link(href= parent.href)= parent.name
+            a.link.bread-crumbs__link(href=parent.href)=parent.name
             |
             |
             span /
-        li.bread-crumbs__item= pages.currentPage
+        li.bread-crumbs__item=pages.currentPage
