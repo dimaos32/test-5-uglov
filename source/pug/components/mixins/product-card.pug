@@ -1,5 +1,5 @@
 mixin produtct-card(data={})
-  article.produtct-card
+  article.produtct-card(data-price=data.price)
     a.produtct-card__link(href=data.href)
     .produtct-card__cover
       +img(
@@ -15,6 +15,6 @@ mixin produtct-card(data={})
       p.produtct-card__desc!=data.desc
       +cart-product-counter(data.value, {id: `cart-${data.id}-quantity`}).produtct-card__counter
     .produtct-card__col.produtct-card__col--right
-      p.h3.produtct-card__price!= data.price
+      p.h3.produtct-card__price #[output 0] руб.
       a.txt-sm.link.produtct-card__del-link(href="#") Удалить
 

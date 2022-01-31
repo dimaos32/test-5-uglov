@@ -223,9 +223,9 @@
   top: 5px;
   right: 10px;
 
-  width: 16px;
+  min-width: 16px;
   height: 16px;
-  padding-top: 1px;
+  padding: 1px 3px 0;
 
   color: $color-default-white;
   background-color: $color-default-black;

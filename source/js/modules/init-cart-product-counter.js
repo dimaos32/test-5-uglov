@@ -1,3 +1,5 @@
+import {updateCart} from './init-cart-calculator';
+
 const initCartProductCounter = () => {
   const counters = document.querySelectorAll('.cart-product-counter');
 
@@ -54,6 +56,8 @@ const initCartProductCounter = () => {
           incrementBtn.disabled = false;
         }
       }
+
+      updateCart();
     });
 
     incrementBtn.addEventListener('click', () => {
@@ -74,6 +78,8 @@ const initCartProductCounter = () => {
           decrementBtn.disabled = false;
         }
       }
+
+      updateCart();
     });
   });
 };

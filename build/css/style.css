@@ -839,9 +839,9 @@ button,
   position: absolute;
   top: 5px;
   right: 10px;
-  width: 16px;
+  min-width: 16px;
   height: 16px;
-  padding-top: 1px;
+  padding: 1px 3px 0;
   color: #ffffff;
   background-color: #000000;
   border-radius: 50px;
@@ -1542,6 +1542,8 @@ textarea:focus +
   padding: 45px 30px;
   color: #ffffff;
   background-color: rgba(0, 0, 0, 0.8);
+  -webkit-transition: opacity 0.3s ease;
+  transition: opacity 0.3s ease;
 }
 
 .cart__form-wrapper {
@@ -1914,6 +1916,8 @@ textarea:focus +
   .main-nav__list {
     position: relative;
     z-index: 2;
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
     display: block;
     width: 250px;
     height: calc(100vh - 68px);
@@ -1921,6 +1925,15 @@ textarea:focus +
     height: calc((100 * var(--vh, 1vh)) - 68px);
     padding: 20px 16px 20px;
     background-color: #ffffff;
+    -webkit-transition: -webkit-transform 0.3s ease;
+    transition: -webkit-transform 0.3s ease;
+    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+  }
+
+  .is-open .main-nav__list {
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
   }
 
   .main-nav__item:not(:last-child) {

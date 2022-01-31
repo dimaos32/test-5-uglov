@@ -101,6 +101,8 @@
   color: $color-default-white;
   background-color: rgba($color-default-black, 0.8);
 
+  transition: opacity $trans-default;
+
   @include vp-1023 {
     top: 600px;
     left: 345px;

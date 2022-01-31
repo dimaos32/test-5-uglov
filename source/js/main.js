@@ -3,6 +3,7 @@ import {iosVhFix} from './utils/ios-vh-fix';
 import {initMobileMenu} from './modules/init-mobile-menu';
 import {initSearchForm} from './modules/init-search-form';
 import {initLabelMoving} from './modules/form/init-label-moving';
+import {initCartCalculator} from './modules/init-cart-calculator';
 
 import {initModals} from './modules/modals/init-modals';
 import {initCustomSelect} from './modules/form/init-custom-select';
@@ -22,6 +23,7 @@ window.addEventListener('DOMContentLoaded', () => {
   initMobileMenu();
   initSearchForm();
   initLabelMoving();
+  initCartCalculator();
 
   // Modules
   // ---------------------------------

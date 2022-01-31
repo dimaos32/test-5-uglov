@@ -52,6 +52,12 @@ const initMobileMenu = () => {
   };
 
   const breakpointChecker = () => {
+    mainNav.classList.add('no-transition');
+
+    setTimeout(() => {
+      mainNav.classList.remove('no-transition');
+    }, 10);
+
     if (breakpoint.matches && mainNav.classList.contains('is-open')) {
       closeMenu();
     }
