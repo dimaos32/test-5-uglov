@@ -10,6 +10,7 @@ import {initFormValidate} from './modules/form/init-form-validate';
 import {initAutoResizeTextarea} from './modules/form/auto-resize-textarea';
 import {removeNoTransition} from './modules/remove-no-transition';
 import {initCartProductCounter} from './modules/init-cart-product-counter';
+import {initCartMap} from './modules/init-cart-map';
 
 // ---------------------------------
 
@@ -35,6 +36,7 @@ window.addEventListener('DOMContentLoaded', () => {
     initAutoResizeTextarea();
     removeNoTransition();
     initCartProductCounter();
+    initCartMap();
   });
 });
 
